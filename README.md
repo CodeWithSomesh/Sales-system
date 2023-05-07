@@ -1,2 +1,2 @@
-# Sales-system
+# Sales System
 Sales System (College Assignment)
