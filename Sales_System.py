@@ -1,5 +1,3 @@
-import os
-
 
 def validate_Name():
 
@@ -65,69 +63,78 @@ def validate_ItemsSold():
             print("Invalid Input, Please Key In The Correct Salary")
             continue  # If invalid input, then user get to retry until they enter a valid input
         else:
+            print("\n")
             return int(itemsSold)
-
-
-
-def calculate_MonthlyPayment(tier, baseSalary, itemsSold):
-
-    # Initialize Variables
-    commission = 0
-    monthlyPayment = 0.00
-
-    if tier == 'B':
-        if itemsSold < 6:
-            print("WARNING: Sales must improve.")
-        elif 9 < itemsSold < 16:
-            commission = (itemsSold - 9) * 50
-            monthlyPayment = baseSalary + commission
-            return round(monthlyPayment, 2)
-        else:
-            print("Invalid")
-    elif tier == 'M':
-        if itemsSold < 9:
-            print("Sales must improve in order to stay in Tier M.")
-        elif 14 < itemsSold < 21:
-            commission = (itemsSold - 14) * 60
-            monthlyPayment = baseSalary + commission
-            return round(monthlyPayment, 2)
-        else:
-            print("Invalid")
-    elif tier == 'P':
-        if itemsSold < 14:
-            print("Sales must improve to stay in Tier P.")
-        elif 19 < itemsSold < 26:
-            commission = (itemsSold - 19) * 75
-            monthlyPayment = baseSalary + commission
-            return round(monthlyPayment, 2)
-        else:
-            print("Invalid")
-
-
-
-
-
-
-
 
 
 
 def main():
 
     # Declare and Initialize Variables
+    name = ''
+    tier = ''
+    baseSalary = 0.00
+    itemsSold = 0
+    commission = 0
+    monthlyPayment = 0.00
 
-    # Ask user for Employee Name, Tier, Base Salary and Number of items sold
+    # Ask user for Employee Name, Tier, Base Salary and Number of Items Sold
     name = validate_Name()
     tier = validate_Tier()
     baseSalary = validate_BaseSalary()
     itemsSold = validate_ItemsSold()
-    monthlyPayment = calculate_MonthlyPayment(tier, baseSalary, itemsSold)
 
+    # Print Employee Details
     print(f"Employee: {name}")
     print(f"Monthly Base: {baseSalary}")
     print(f"Tier: {tier}")
     print(f"Employee: {name}")
     print(f"Items Sold: {itemsSold}")
-    print(f"Monthly Payment: {monthlyPayment}")
+
+
+    # Calculate and Print Monthly Payment
+    if tier == 'B':
+        if itemsSold > 15:
+            commission = ((itemsSold - 15) * 75) + (50 * 6)
+            monthlyPayment = baseSalary + commission
+            print(f"Monthly Payment: {monthlyPayment}")
+        elif itemsSold > 9:
+            commission = (itemsSold - 9) * 50
+            monthlyPayment = baseSalary + commission
+            print(f"Monthly Payment: {monthlyPayment}")
+        elif itemsSold < 6:
+            print(f"Monthly Payment: {baseSalary}")
+            print("WARNING: Sales must improve.")
+        else:
+            print(f"Monthly Payment: {baseSalary}")
+    elif tier == 'M':
+        if itemsSold > 20:
+            commission = ((itemsSold - 20) * 100) + (60 * 6)
+            monthlyPayment = baseSalary + commission
+            print(f"Monthly Payment: {monthlyPayment}")
+        elif itemsSold > 14:
+            commission = (itemsSold - 14) * 60
+            monthlyPayment = baseSalary + commission
+            print(f"Monthly Payment: {monthlyPayment}")
+        elif itemsSold < 9:
+            print(f"Monthly Payment: {baseSalary}")
+            print("WARNING: Sales must improve in order to stay in Tier M.")
+        else:
+            print(f"Monthly Payment: {baseSalary}")
+    elif tier == 'P':
+        if itemsSold > 25:
+            commission = ((itemsSold - 25) * 125) + (75 * 6)
+            monthlyPayment = baseSalary + commission
+            print(f"Monthly Payment: {monthlyPayment}")
+        elif itemsSold > 19:
+            commission = (itemsSold - 19) * 75
+            monthlyPayment = baseSalary + commission
+            print(f"Monthly Payment: {monthlyPayment}")
+        elif itemsSold < 14:
+            print(f"Monthly Payment: {baseSalary}")
+            print("WARNING: Sales must improve to stay in Tier P.")
+        else:
+            print(f"Monthly Payment: {baseSalary}")
+
 
 main()
