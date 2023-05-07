@@ -1,3 +1,4 @@
+import os
 
 def validate_Name():
 
@@ -67,6 +68,25 @@ def validate_ItemsSold():
             return int(itemsSold)
 
 
+def restartProgram():
+
+    # Initialize Variables
+    restart = ""
+
+    # Ask User for input to whether restart or exit program
+    while True:
+        restart = input("Print next employee's details? [Y/N]: ").upper()
+        if restart == "Y":
+            os.system("pause")
+            os.system("cls")
+            main()
+        elif restart == "N":
+            print("Thanks for using the system, have a nice day!")
+            exit()
+        else:
+            print("Invalid Input, Please Key In The Correct Input")
+            continue
+
 
 def main():
 
@@ -77,6 +97,7 @@ def main():
     itemsSold = 0
     commission = 0
     monthlyPayment = 0.00
+    restart = ""
 
     # Ask user for Employee Name, Tier, Base Salary and Number of Items Sold
     name = validate_Name()
@@ -98,43 +119,58 @@ def main():
             commission = ((itemsSold - 15) * 75) + (50 * 6)
             monthlyPayment = baseSalary + commission
             print(f"Monthly Payment: {monthlyPayment}")
+            print("\n")
         elif itemsSold > 9:
             commission = (itemsSold - 9) * 50
             monthlyPayment = baseSalary + commission
             print(f"Monthly Payment: {monthlyPayment}")
+            print("\n")
         elif itemsSold < 6:
             print(f"Monthly Payment: {baseSalary}")
             print("WARNING: Sales must improve.")
+            print("\n")
         else:
             print(f"Monthly Payment: {baseSalary}")
+            print("\n")
     elif tier == 'M':
         if itemsSold > 20:
             commission = ((itemsSold - 20) * 100) + (60 * 6)
             monthlyPayment = baseSalary + commission
             print(f"Monthly Payment: {monthlyPayment}")
+            print("\n")
         elif itemsSold > 14:
             commission = (itemsSold - 14) * 60
             monthlyPayment = baseSalary + commission
             print(f"Monthly Payment: {monthlyPayment}")
+            print("\n")
         elif itemsSold < 9:
             print(f"Monthly Payment: {baseSalary}")
             print("WARNING: Sales must improve in order to stay in Tier M.")
+            print("\n")
         else:
             print(f"Monthly Payment: {baseSalary}")
+            print("\n")
     elif tier == 'P':
         if itemsSold > 25:
             commission = ((itemsSold - 25) * 125) + (75 * 6)
             monthlyPayment = baseSalary + commission
             print(f"Monthly Payment: {monthlyPayment}")
+            print("\n")
         elif itemsSold > 19:
             commission = (itemsSold - 19) * 75
             monthlyPayment = baseSalary + commission
             print(f"Monthly Payment: {monthlyPayment}")
+            print("\n")
         elif itemsSold < 14:
             print(f"Monthly Payment: {baseSalary}")
             print("WARNING: Sales must improve to stay in Tier P.")
+            print("\n")
         else:
             print(f"Monthly Payment: {baseSalary}")
+            print("\n")
+
+
+    restart = restartProgram()
 
 
 main()
