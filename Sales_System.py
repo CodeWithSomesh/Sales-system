@@ -169,7 +169,8 @@ def main():
             print(f"Monthly Payment: {baseSalary}")
             print("\n")
 
-
+            
+    # Ask User for input to whether restart or exit program
     restart = restartProgram()
 
 
