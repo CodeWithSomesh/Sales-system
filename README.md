@@ -16,7 +16,7 @@ Below is the monthly salary schedule for each tier. Let N represent the number o
 
 Write a program that will: <br>
 ⭐ Ask the user to enter the employee’s name. <br>
-⭐ Ask the user to input a Tier. It should accept B, M, P, b, m, or p. In other words, the user may use either upper or lower case designations for the tier. Read the input.  <br>
+⭐ Ask the user to input a Tier. It should accept B, M, P, b, m, or p. In other words, the user may use either upper or lower case designations for the tier. <br>
 ⭐ Ask the user to input the base salary for the employee, and read it as a double.  <br>
 ⭐ Ask the user for the number of items sold, and read that value as an integer.  <br>
 ⭐ Based on the tier, base salary, and number of items sold, compute and report the monthly pay.  <br>
