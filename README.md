@@ -24,4 +24,5 @@ Write a program that will: <br>
 
  <br>
  
+ ## 📄Sample Output
  ![image](https://user-images.githubusercontent.com/123357802/236674998-5c120512-075b-403b-9b64-ae098dd0195e.png)
