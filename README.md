@@ -1,5 +1,5 @@
 # Sales System
-Sales System (College Assignment using Python)
+Sales System (College Assignment built using Python)
 ----------------------------------------------------
 
 ## 📄Description of the Problem
